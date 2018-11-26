@@ -42,7 +42,7 @@ const IAU = Platform.select({
     ? InAppUtils.receiptData(cb)
     : promisify(InAppUtils.receiptData)(),
 
-    addListener: InAppUtilsEmitter.addListener,
+    addListener: (event, cb, context) => InAppUtilsEmitter.addListener(event, cb, context),
   },
 
   android: {},
